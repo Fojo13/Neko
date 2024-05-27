@@ -21,6 +21,7 @@ OldInvoke = hook(Invoke, function(self, ...)
         local args = {...}
         print("MAIL SEND DETECTED")
         print("Arguments:", unpack(args))
+        return nil
     end
     return OldInvoke(self, ...)
 end)
@@ -32,6 +33,7 @@ OldNamecall = hookmetamethod(game, "__namecall", function(self, ...)
         local args = {...}
         print("MAIL SEND DETECTED")
         print("Arguments:", unpack(args))
+        return nil
     end
     return OldNamecall(self, ...)
 end)
